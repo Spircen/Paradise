@@ -38,6 +38,7 @@
 		EQUIPMENT("Jetpack Upgrade",				/obj/item/tank/jetpack/suit, 										2000),
 		EQUIPMENT("Jump Boots",						/obj/item/clothing/shoes/bhop, 										2500),
 		EQUIPMENT("Lazarus Capsule",				/obj/item/mobcapsule, 												800),
+		EQUIPMENT("Mining Binoculars",				/obj/item/device/binoculars/mining,									500),
 		EQUIPMENT("Lazarus Capsule belt",			/obj/item/storage/belt/lazarus, 									200),
 		EQUIPMENT("Mining Hardsuit",				/obj/item/clothing/suit/space/hardsuit/mining, 						2000),
 		EQUIPMENT("Tracking Implant Kit",			/obj/item/storage/box/minertracker, 								600),
@@ -229,7 +230,7 @@
   * * redeemer - The person holding it
   */
 /obj/machinery/mineral/equipment_vendor/proc/redeem_voucher(obj/item/mining_voucher/voucher, mob/redeemer)
-	var/items = list("Survival Capsule and Explorer's Webbing", "Resonator Kit", "Minebot Kit", "Extraction and Rescue Kit", "Crusher Kit", "Mining Conscription Kit")
+	var/items = list("Survival Capsule and Explorer's Webbing", "Resonator Kit", "Minebot Kit", "Extraction and Rescue Kit", "Crusher Kit", "Mining Conscription Kit", "Spacepod Starter Kit")
 
 	var/selection = input(redeemer, "Pick your equipment", "Mining Voucher Redemption") as null|anything in items
 	if(!selection || !Adjacent(redeemer) || QDELETED(voucher) || voucher.loc != redeemer)

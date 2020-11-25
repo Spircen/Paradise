@@ -162,7 +162,8 @@
 					socks,
 					body_accessory,
 					gear,
-					autohiss
+					autohiss,
+					all_quirks
 				 	FROM [format_table_name("characters")] WHERE ckey='[C.ckey]' AND slot='[slot]'"})
 	if(!query.Execute())
 		var/err = query.ErrorMsg()
@@ -241,7 +242,7 @@
 		body_accessory = query.item[50]
 		loadout_gear = params2list(query.item[51])
 		autohiss_mode = text2num(query.item[52])
-
+		all_quirks = params2list(query.item[53])
 		saved = TRUE
 
 	//Sanitize
@@ -301,11 +302,11 @@
 	if(!organ_data) src.organ_data = list()
 	if(!rlimb_data) src.rlimb_data = list()
 	if(!loadout_gear) loadout_gear = list()
+	if(!all_quirks) all_quirks = list()
 
 	// Check if the current body accessory exists
 	if(!GLOB.body_accessory_by_name[body_accessory])
 		body_accessory = null
-
 	return 1
 
 /datum/preferences/proc/save_character(client/C)
@@ -313,6 +314,7 @@
 	var/rlimblist
 	var/playertitlelist
 	var/gearlist
+	var/quirklist
 
 	var/markingcolourslist = list2params(m_colours)
 	var/markingstyleslist = list2params(m_styles)
@@ -324,6 +326,8 @@
 		playertitlelist = list2params(player_alt_titles)
 	if(!isemptylist(loadout_gear))
 		gearlist = list2params(loadout_gear)
+	if(!isemptylist(all_quirks))
+		quirklist = list2params(all_quirks)
 
 	var/DBQuery/firstquery = GLOB.dbcon.NewQuery("SELECT slot FROM [format_table_name("characters")] WHERE ckey='[C.ckey]' ORDER BY slot")
 	firstquery.Execute()
@@ -380,7 +384,8 @@
 												socks='[socks]',
 												body_accessory='[body_accessory]',
 												gear='[gearlist]',
-												autohiss='[autohiss_mode]'
+												autohiss='[autohiss_mode]',
+												all_quirks='[quirklist]'
 												WHERE ckey='[C.ckey]'
 												AND slot='[default_slot]'"}
 												)
@@ -418,7 +423,7 @@
 											gen_record,
 											player_alt_titles,
 											disabilities, organ_data, rlimb_data, nanotrasen_relation, speciesprefs,
-											socks, body_accessory, gear, autohiss)
+											socks, body_accessory, gear, autohiss, all_quirks)
 
 					VALUES
 											('[C.ckey]', '[default_slot]', '[sanitizeSQL(metadata)]', '[sanitizeSQL(real_name)]', '[be_random_name]','[gender]',
@@ -446,8 +451,7 @@
 											'[sanitizeSQL(gen_record)]',
 											'[playertitlelist]',
 											'[disabilities]', '[organlist]', '[rlimblist]', '[nanotrasen_relation]', '[speciesprefs]',
-											'[socks]', '[body_accessory]', '[gearlist]', '[autohiss_mode]')
-
+											'[socks]', '[body_accessory]', '[gearlist]', '[autohiss_mode]', '[quirklist]')
 "}
 )
 

@@ -50,7 +50,6 @@
 	name = "grass"
 	icon = 'icons/obj/flora/snowflora.dmi'
 	anchored = 1
-	max_integrity = 15
 
 /obj/structure/flora/grass/brown
 	icon_state = "snowgrass1bb"
@@ -81,7 +80,6 @@
 	icon = 'icons/obj/flora/snowflora.dmi'
 	icon_state = "snowbush1"
 	anchored = 1
-	max_integrity = 15
 
 /obj/structure/flora/bush/New()
 	..()
@@ -94,7 +92,6 @@
 	icon = 'icons/obj/flora/ausflora.dmi'
 	icon_state = "firstbush_1"
 	anchored = 1
-	max_integrity = 15
 
 /obj/structure/flora/ausbushes/New()
 	..()

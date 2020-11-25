@@ -19,7 +19,7 @@
 
 	message_admins("Admin [key_name_admin(usr)] has restarted the [controller] controller.")
 
-/client/proc/debug_controller(controller in list("Configuration", "pAI", "Cameras", "Space Manager"))
+/client/proc/debug_controller(controller in list("Configuration", "pAI", "Cameras", "Space Manager","Quirks"))
 	set category = "Debug"
 	set name = "Debug Misc Controller"
 	set desc = "Debug the various non-subsystem controllers for the game (be careful!)"
@@ -39,5 +39,8 @@
 		if("Space Manager")
 			debug_variables(GLOB.space_manager)
 			feedback_add_details("admin_verb","DSpace")
+		if("Quirks")
+			debug_variables(SSquirks)
+			feedback_add_details("admin_verb","DQuirks")
 
 	message_admins("Admin [key_name_admin(usr)] is debugging the [controller] controller.")

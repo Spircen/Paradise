@@ -187,14 +187,6 @@
 	build_path = /obj/item/pipe_painter
 	category = list("initial", "Miscellaneous")
 
-/datum/design/window_painter
-	name = "Window Painter"
-	id = "window_painter"
-	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 5000, MAT_GLASS = 2000)
-	build_path = /obj/item/pipe_painter/window_painter
-	category = list("initial", "Miscellaneous")
-
 /datum/design/floorpainter
 	name = "Floor painter"
 	id = "floor_painter"
@@ -445,14 +437,6 @@
 	build_type = AUTOLATHE
 	materials = list(MAT_GLASS = 2500)
 	build_path = /obj/item/reagent_containers/glass/beaker/large
-	category = list("initial", "Medical")
-
-/datum/design/healthanalyzer
-	name = "Health Analyzer"
-	id = "healthanalyzer"
-	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 500, MAT_GLASS = 50)
-	build_path = /obj/item/healthanalyzer
 	category = list("initial", "Medical")
 
 /datum/design/pillbottle

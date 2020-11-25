@@ -58,14 +58,12 @@
 
 		var/mob/M = poi
 		if(istype(M))
-			if(isnewplayer(M))  // People in the lobby screen; only have their ckey as a name.
-				continue
 			if(isobserver(M))
 				ghosts += list(serialized)
-			else if(M.mind == null)
-				npcs += list(serialized)
 			else if(M.stat == DEAD)
 				dead += list(serialized)
+			else if(M.mind == null)
+				npcs += list(serialized)
 			else
 				alive += list(serialized)
 

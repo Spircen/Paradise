@@ -426,7 +426,6 @@
 
 	if(!winexists(src, "asset_cache_browser")) // The client is using a custom skin, tell them.
 		to_chat(src, "<span class='warning'>Unable to access asset cache browser, if you are using a custom skin file, please allow DS to download the updated version, if you are not, then make a bug report. This is not a critical issue but can cause issues with resource downloading, as it is impossible to know when extra resources arrived to you.</span>")
-
 	//This is down here because of the browse() calls in tooltip/New()
 	if(!tooltips)
 		tooltips = new /datum/tooltip(src)
@@ -875,20 +874,20 @@
 	winset(src, "mainwindow.mebutton", "background-color=#40628a;text-color=#FFFFFF")
 	///// UI ELEMENTS /////
 	/* Mainwindow */
-	winset(src, "mainwindow", "background-color=#272727")
-	winset(src, "mainwindow.mainvsplit", "background-color=#272727")
-	winset(src, "mainwindow.tooltip", "background-color=#272727")
+	winset(src, "mainwindow", "background-color=#36393F")
+	winset(src, "mainwindow.mainvsplit", "background-color=#36393F")
+	winset(src, "mainwindow.tooltip", "background-color=#36393F")
 	/* Outputwindow */
-	winset(src, "outputwindow.browseroutput", "background-color=#272727")
+	winset(src, "outputwindow.browseroutput", "background-color=#36393F")
 	/* Rpane */
-	winset(src, "rpane", "background-color=#272727")
-	winset(src, "rpane.rpanewindow", "background-color=#272727")
+	winset(src, "rpane", "background-color=#36393F")
+	winset(src, "rpane.rpanewindow", "background-color=#36393F")
 	/* Browserwindow */
-	winset(src, "browserwindow", "background-color=#272727")
-	winset(src, "browserwindow.browser", "background-color=#272727")
+	winset(src, "browserwindow", "background-color=#36393F")
+	winset(src, "browserwindow.browser", "background-color=#36393F")
 	/* Infowindow */
-	winset(src, "infowindow", "background-color=#272727;text-color=#FFFFFF")
-	winset(src, "infowindow.info", "background-color=#272727;text-color=#FFFFFF;highlight-color=#009900;tab-text-color=#FFFFFF;tab-background-color=#272727")
+	winset(src, "infowindow", "background-color=#36393F;text-color=#FFFFFF")
+	winset(src, "infowindow.info", "background-color=#36393F;text-color=#FFFFFF;highlight-color=#009900;tab-text-color=#FFFFFF;tab-background-color=#36393F")
 	// NOTIFY USER
 	to_chat(src, "<span class='notice'>Darkmode Enabled</span>")
 

@@ -42,7 +42,6 @@ export const Sleeper = (props, context) => {
     <Window resizable>
       <Window.Content className="Layout__content--flexColumn">
         {body}
-        <SleeperDialysis />
       </Window.Content>
     </Window>
   );
@@ -58,6 +57,7 @@ const SleeperMain = (props, context) => {
       <SleeperOccupant />
       <SleeperDamage />
       <SleeperChemicals />
+      <SleeperDialysis />
     </Fragment>
   );
 };
@@ -174,7 +174,6 @@ const SleeperDamage = (props, context) => {
 const SleeperDialysis = (props, context) => {
   const { act, data } = useBackend(context);
   const {
-    hasOccupant,
     isBeakerLoaded,
     beakerMaxSpace,
     beakerFreeSpace,
@@ -187,7 +186,7 @@ const SleeperDialysis = (props, context) => {
       buttons={
         <Fragment>
           <Button
-            disabled={!isBeakerLoaded || beakerFreeSpace <= 0 || !hasOccupant}
+            disabled={!isBeakerLoaded || beakerFreeSpace <= 0}
             selected={canDialysis}
             icon={canDialysis ? "toggle-on" : "toggle-off"}
             content={canDialysis ? "Active" : "Inactive"}
